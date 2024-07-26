@@ -1,0 +1,6 @@
+image: occupancy_grid.pgm  # The path to the PGM file
+resolution: 0.05  # The resolution of the map in meters per cell
+origin: [0.0, 0.0, 0.0]  # The origin of the map [x, y, yaw]
+negate: 0  # Whether to negate the pixel values (0 = no, 1 = yes)
+occupied_thresh: 0.65  # Threshold above which pixels are considered occupied
+free_thresh: 0.196  # Threshold below which pixels are considered free
