@@ -1,0 +1,18 @@
+<launch>
+  <!-- Load the map -->
+
+  <!-- OGM -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find map)/maps/map.yaml" />
+  <!-- PCD -->
+  <node pkg="map" type="pcd_publisher.py" name="pcd_publisher" output="screen" />
+
+  <!-- Path planner node -->
+  <node name="path_planner" pkg="map" type="path.py" output="screen" />
+  <!-- <node name="path_planner" pkg="map" type="pathastar.py" output="screen" /> -->
+
+  <!-- Transformations  args="x y z roll pitch yaw  -->
+  <!-- <node pkg="tf" type="static_transform_publisher" name="map_to_point_cloud" args="0 0 0 0 0 1.5708 map point_cloud_frame 100"/> -->
+  <node pkg="tf" type="static_transform_publisher" name="map_to_point_cloud" args="0 0 0 0 0 0 map point_cloud_frame 100"/>
+
+  <!-- <node pkg="tf" type="static_transform_publisher" name="base_link_to_laser" args="0 0 0 0 0 0 base_link laser 100" /> -->
+</launch>
