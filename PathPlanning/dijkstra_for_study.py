@@ -76,6 +76,7 @@ class Dijkstra:
             c_id = min(open_set, key=lambda o: open_set[o].cost)
 
             # min_cost = float('inf')  # 초기값을 무한대로 설정
+            
             # for node_id in open_set:
             #     current_cost = open_set[node_id].cost
             #     if current_cost < min_cost:
